@@ -1,0 +1,16 @@
+# Docker Version
+services:
+  www:
+    build: 
+        context: .
+        dockerfile: Dockerfile.php
+    image: php:apache
+    volumes:
+      - "./:/var/www/html"
+    ports:
+      - 8080:80
+      - 8443:443
+
+# using 'docker-compose up' restarts the docker service
+# using 'docker-compose down' stopping everything that was happeing
+# docker-php-ext-install pdo pdo_mysql mysqli
