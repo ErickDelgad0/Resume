@@ -1,16 +1,13 @@
-# Docker Version
+version: '3.8'  # Adjust the version as needed
+
 services:
   www:
-    build: 
-        context: .
-        dockerfile: Dockerfile.php
-    image: php:apache
+    image: php:apache  # Use the official PHP Apache image
     volumes:
-      - "./:/var/www/html"
+      - "./:/var/www/html"  # Mount the current directory to the container's web root
     ports:
-      - 8080:80
-      - 8443:443
+      - "8080:80"  # Map host port 8080 to container port 80 for HTTP
+      - "8443:443"  # Map host port 8443 to container port 443 for HTTPS
 
-# using 'docker-compose up' restarts the docker service
-# using 'docker-compose down' stopping everything that was happeing
-# docker-php-ext-install pdo pdo_mysql mysqli
+# Optional: Use the following lines to install PHP extensions
+#   command: bash -c "docker-php-ext-install pdo pdo_mysql mysqli && apache2-foreground"
