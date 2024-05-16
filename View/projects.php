@@ -59,7 +59,7 @@
 	<body>
 		<!-- Navbar -->
 		<div class="navbar">
-			<a href="/">Resume</a>
+			<a href="../">Resume</a>
 			<a class="active" href="projects.php">Projects</a>
 		</div>
 		<div class="page-wrap" id="root">
